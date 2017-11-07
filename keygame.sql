@@ -36,11 +36,30 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Estrutura da tabela `conquistas` @GuilhermeOliveira
+--
+
+CREATE TABLE conquistas (
+    id_conquistas INT(11) NOT NULL AUTO_INCREMENT,
+    nome_torneio VARCHAR(32) NOT NULL,
+    data_torneio DATE NOT NULL,
+    posicao_torneio VARCHAR(2) NOT NULL,
+    descricao TEXT NULL,
+    id_usuario INT(11) UNSIGNED NOT NULL,
+PRIMARY KEY (id_conquistas)); 
+
+--
 -- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `usuario`, `email`, `senha`, `nascimento`, `avatar`) VALUES
 (1, 'Salvatory', 'luckvalente@gmail.com', '12345678', '1997-10-04', NULL);
+
+--
+-- Extraindo dados da tabela `conquistas` @GuilhermeOliveira
+--
+
+INSERT INTO conquista (id_conquistas, nome_torneio, data_torneio, posicao_torneio, descricao, id_usuario) VALUES(1,  'Mack', '2017-10-25', 1, 'Apenas um teste do sistema', 1);
 
 --
 -- Indexes for dumped tables
